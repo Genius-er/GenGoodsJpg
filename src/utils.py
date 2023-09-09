@@ -61,9 +61,12 @@ def getPngObjectFromJpgOrPngPath(img_path):
         elif img_path.endswith(".png"): # 
             pngObj = Image.open(img_path).convert("RGBA")
 
+        if pngObj is None:
+            return None
         return pngObj.resize((800, 800))
     except Exception as e:
         print(f"拼接失败：{e}")
+        return None
 
 
 '''调整png对象的透明度'''
