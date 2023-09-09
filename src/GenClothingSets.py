@@ -43,7 +43,7 @@ def genClothingSets():
 OneBrandAllPngObjInfo = {}
 OneBrandAllShortsPngInfo = {}
 OneBrandAllBibShortsPngInfo = {}
-watermarkObj = None
+watermarkObj = Image.new("RGBA", (800, 800))
 def genOneBrandClothingSets(Brand):
     global OneBrandAllShortsPngInfo, OneBrandAllBibShortsPngInfo, OneBrandAllPngObjInfo, watermarkObj
     BRAND_FILE_FOLDER_PATH = os.path.join(WORK_PATH, Brand) # 当前品牌的资源路径
