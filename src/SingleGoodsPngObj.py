@@ -140,6 +140,13 @@ class PngDisplayObject():
     anchorOffsetX = property(_getAnchorOffsetX, _setAnchorOffsetX)
     anchorOffsetY = property(_getAnchorOffsetY, _setAnchorOffsetY)
 
+bindCommonPng = genSingleGoodsClassDec("commonPng", [0, 0, 0, 0])
+@bindCommonPng
+class CommonPng(PngDisplayObject):
+    def __init__(self, filePath, config):
+        super().__init__(filePath, config)
+        self._mainArea = [135, 18, 665, 782]
+
 
 bindShirts = genSingleGoodsClassDec("shirts", [0, 0, 0, 0])
 @bindShirts
