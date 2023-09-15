@@ -12,7 +12,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 1.0,
-                    "pos": [0, 0], # 这个一定要整数
+                    "pos": [400,400], # 这个一定要整数
                 }
             ],
             "outputJpgFileName": "{0}_0", 
@@ -27,7 +27,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.975,
-                    "pos": [-115, 68],
+                    "pos": [275, 342],
                 },
                 {
                     "desc": "从对应品牌中筛选出短裤背面",
@@ -50,7 +50,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1,
                     "scale": 1.0,
-                    "pos": [-128, 0],
+                    "pos": [272, 400],
                 },
                 {
                     "desc": "从对应品牌中筛选出短裤背面",
@@ -58,7 +58,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 0.185,
-                    "pos": [345, 0],
+                    "pos": [419, 726],
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
@@ -82,7 +82,7 @@ SpringAutumnSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 0,
                     "scale": 1.0,
-                    "pos": [0, 0],
+                    "pos": [400, 400],
                 }
             ],
             "outputJpgFileName": "{0}_0", 
@@ -97,7 +97,7 @@ SpringAutumnSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.918,
-                    "pos": [-77, 33],
+                    "pos": [290, 399],
                 },
                 {
                     "desc": "从对应品牌中筛选出无背带长裤背面",
@@ -105,7 +105,7 @@ SpringAutumnSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.806,
-                    "pos": [342, 40],
+                    "pos": [664, 437],
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
@@ -120,7 +120,7 @@ SpringAutumnSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1,
                     "scale": 0.918,
-                    "pos": [-77, 33],
+                    "pos": [290, 399],
                 },
                 {
                     "desc": "从对应品牌中筛选出长背带裤裤背面",
@@ -128,10 +128,123 @@ SpringAutumnSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 0.869,
-                    "pos": [317, 52],
+                    "pos": [664, 400],
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
+        },
+        "d": { 
+            "desc": "单款7颜色以上的主图",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'1_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [638, 258],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'2_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [563, 303],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'3_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [496, 347],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'4_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [424, 390],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'5_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [352, 444],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'6_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [248, 496],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'7_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [176, 559],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "bibPants",
+                    "fileNamePattern": r'1_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.326,
+                    "pos": [234, 134],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "bibPants",
+                    "fileNamePattern": r'2_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.326,
+                    "pos": [140, 134],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "pants",
+                    "fileNamePattern": r'1_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.265,
+                    "pos": [683, 678],
+                }
+            ],
+            "outputJpgFileName": "main", 
+        },
+        "e": { 
+            "desc": "单款3颜色以上的主图",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'3_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [550, 309],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'2_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [399, 388],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'1_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [229, 467],
+                }
+            ],
+            "outputJpgFileName": "main", 
         }
     }
 }
@@ -151,7 +264,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 0,
                     "scale": 1.0,
-                    "pos": [0, 0],
+                    "pos": [400, 400],
                 },
                 {
                     "desc": "抓绒左上挂件",
@@ -159,7 +272,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'WinterLeftTop1\.png',
                     "zOrder": 0,
                     "scale": 0.732,
-                    "pos": [-214, 397],
+                    "pos": [78, 110],
                 }
             ],
             "outputJpgFileName": "winter/{0}_0", 
@@ -174,7 +287,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.918,
-                    "pos": [-77, 33],
+                    "pos": [290, 399],
                 },
                 {
                     "desc": "从对应品牌中筛选出无背带长裤背面",
@@ -182,7 +295,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.806,
-                    "pos": [342, 40],
+                    "pos": [664, 437],
                 },
                 {
                     "desc": "抓绒左上挂件",
@@ -190,7 +303,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'WinterLeftTop1\.png',
                     "zOrder": 0,
                     "scale": 0.732,
-                    "pos": [-214, 397],
+                    "pos": [78, 110],
                 }
             ],
             "outputJpgFileName": "winter/{0}_{1}", 
@@ -205,7 +318,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1,
                     "scale": 0.918,
-                    "pos": [-77, 33],
+                    "pos": [290, 399],
                 },
                 {
                     "desc": "从对应品牌中筛选出长背带裤裤背面",
@@ -213,7 +326,7 @@ WinterSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 0.869,
-                    "pos": [317, 52],
+                    "pos": [664, 400],
                 },
                 {
                     "desc": "抓绒左上挂件",
@@ -221,10 +334,147 @@ WinterSetsConfig = {
                     "fileNamePattern": r'WinterLeftTop1\.png',
                     "zOrder": 0,
                     "scale": 0.732,
-                    "pos": [-214, 397],
+                    "pos": [78, 110],
                 }
             ],
             "outputJpgFileName": "winter/{0}_{1}", 
+        },
+        "d": { 
+            "desc": "单款7颜色以上的主图",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'1_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [638, 258],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'2_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [563, 303],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'3_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [496, 347],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'4_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [424, 390],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'5_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [352, 444],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'6_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [248, 496],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'7_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.6,
+                    "pos": [176, 559],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "bibPants",
+                    "fileNamePattern": r'1_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.326,
+                    "pos": [234, 134],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "bibPants",
+                    "fileNamePattern": r'2_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.326,
+                    "pos": [140, 134],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长背带裤裤背面",
+                    "type": "pants",
+                    "fileNamePattern": r'1_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.265,
+                    "pos": [683, 678],
+                },
+                {
+                    "desc": "抓绒左上挂件",
+                    "type": "commonPng",
+                    "fileNamePattern": r'WinterLeftTop1\.png',
+                    "zOrder": 0,
+                    "scale": 0.5,
+                    "pos": [60, 90],
+                }
+            ],
+            "outputJpgFileName": "winter/main", 
+        },
+        "e": { 
+            "desc": "单款3颜色以上的主图",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'3_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [550, 309],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'2_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [399, 388],
+                },{
+                    "desc": "从对应品牌中筛选出长袖袖上衣",
+                    "type": "longShirts",
+                    "fileNamePattern": r'1_0\.png',
+                    "zOrder": 0,
+                    "scale": 0.8,
+                    "pos": [229, 467],
+                },
+                {
+                    "desc": "抓绒左上挂件",
+                    "type": "commonPng",
+                    "fileNamePattern": r'WinterLeftTop1\.png',
+                    "zOrder": 0,
+                    "scale": 0.732,
+                    "pos": [78, 110],
+                }
+            ],
+            "outputJpgFileName": "winter/main", 
         }
     }
 }
+
+
+def trans(scale, xy):
+    return [int(800*scale/2+xy[0]), int(800 - xy[1] - 800*scale/2)]
+
+
+trans(1, [0, 0])
+trans(1, [0, 0])

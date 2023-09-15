@@ -39,12 +39,21 @@ class GenClothingJpgManager():
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
                 # 便利sourcePath路径下的所有子文件，拿到子文件夹名
                 for item in os.listdir(sourcePath):
+                    stylePath = f"{sourcePath}/{item}"
                     if os.path.isdir(f"{sourcePath}/{item}"):
                         genJpgObjList = [] # 双层list，list里面每一项要组合 
                         styleNum = item # 对应品牌中的款式序号
                         print(f"styleNum:{styleNum}")
                         styleSourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}/{styleNum}'
-                        outputPath = f"{basicOutputPath}/{styleNum}"
+                        allColorNum = []
+                        for item in os.listdir(stylePath):
+                            if os.path.isfile(f"{stylePath}/{item}"):
+                                if re.match(r'(\d+)_(\d+)\.png', item):
+                                    colorNum = int(item.split("_")[0])
+                                    if colorNum not in allColorNum:
+                                        allColorNum.append(colorNum)
+                        colorNumOfOneStyle = len(allColorNum) # 一款产品中的颜色数量
+                        outputPath = f'{basicOutputPath}/{styleNum}({colorNumOfOneStyle})'
 
                         for itemConfig in styleConfig["CompositeElements"]:
                             if itemConfig["type"] in ["shirts", "longShirts", "vest"]:
@@ -119,15 +128,12 @@ class GenClothingJpgManager():
             if combineImgItem.scaleX is not None and combineImgItem.scaleY is not None:
                 size = (int(combineImgItem.scaleX * combineImgItem.displayPng.width), int(combineImgItem.scaleY * combineImgItem.displayPng.height))
 
-            pos = (combineImgItem.x, 800 - combineImgItem.y - size[1]) # xy的锚点是左下角，要映射成左上角的位置
+            pos = (int(combineImgItem.x - size[1]/2), int(combineImgItem.y - size[1]/2)) # xy的锚点是左下角，要映射成左上角的位置
     
             
 
             # 创建透明底图
             white_bg = self.combineImageObj(white_bg, combineImgItem.displayPng.resize(size), pos)
-            # new_png = Image.new("RGBA", (800, 800), (255, 255, 255, 0))
-            # new_png.paste(combineImgItem.displayPng.resize(size), pos)
-            # white_bg = Image.alpha_composite(white_bg, new_png)
 
         return white_bg
     
@@ -166,9 +172,11 @@ class GenClothingJpgManager():
 
 def main():
     genClothingJpgManager = GenClothingJpgManager()
-    genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SummerSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SpringAutumnSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.WinterSetsConfig)
+    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SummerSetsConfig)
+    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SpringAutumnSetsConfig)
+    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.WinterSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg("ralvpha", config.SpringAutumnSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg("ralvpha", config.WinterSetsConfig)
 
 
 main()
