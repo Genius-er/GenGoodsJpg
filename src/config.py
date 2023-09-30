@@ -35,7 +35,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.53,
-                    "pos": [435, 47],
+                    "pos": [650, 548],
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
@@ -50,7 +50,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1,
                     "scale": 1.0,
-                    "pos": [272, 400],
+                    "pos": [280, 400],
                 },
                 {
                     "desc": "从对应品牌中筛选出短裤背面",
@@ -58,7 +58,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 0.185,
-                    "pos": [419, 726],
+                    "pos": [658, 501],
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
