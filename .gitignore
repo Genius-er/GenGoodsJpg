@@ -3,7 +3,5 @@
 output/
 !output/ExampleBrand/
 
-resource/
-!resource/GoodsSinglePng/ExampleBrand/
 
 src/__pycache__/
