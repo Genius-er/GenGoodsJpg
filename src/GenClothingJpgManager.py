@@ -24,7 +24,6 @@ class GenClothingJpgManager():
         basicSourcePath = f"./resource/GoodsSinglePng/{brandName}"
         basicOutputPath = f"./output/{brandName}/{genConfig['configName']}"
         outputPath = ""
-        outputPath = ""
 
         # 判断如果 basicSourcePath 不存在则直接return
         if not os.path.exists(basicSourcePath):
@@ -166,17 +165,19 @@ class GenClothingJpgManager():
     def getJpgObj(self, config, filePath):
         return SingleGoodsPngObj.AllTypeObjClass[config["type"]](filePath, config)
 
-    
+
+
+def genJpgForBrand(brand):
+    genClothingJpgManager = GenClothingJpgManager()
+    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SummerSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
 
 
 def main():
-    genClothingJpgManager = GenClothingJpgManager()
-    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SummerSetsConfig)
-    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.SpringAutumnSetsConfig)
-    # genClothingJpgManager.genOneBrandClothingSetJpg("ExampleBrand", config.WinterSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg("ralvpha", config.SpringAutumnSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg("ralvpha", config.WinterSetsConfig)
+
+    genJpgForBrand("etxeondo")
 
 
 main()
