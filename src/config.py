@@ -62,7 +62,35 @@ SummerSetsConfig = {
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
-        }
+        },
+        "d": { 
+            "desc": "背带短裤背面",
+            "CompositeElements": [
+                {
+                    "desc": "从对应品牌中筛选出短裤背面",
+                    "type": "bibShorts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 1,
+                    "pos": [400, 400],
+                },
+            ],
+            "outputJpgFileName": "{0}_1", 
+        },
+        "e": { 
+            "desc": "无背带短裤背面",
+            "CompositeElements": [
+                {
+                    "desc": "无背带短裤背面",
+                    "type": "shorts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 1,
+                    "pos": [400, 400],
+                },
+            ],
+            "outputJpgFileName": "{0}_1", 
+        },
 
     }
 }
@@ -80,6 +108,36 @@ SpringAutumnSetsConfig = {
                     "desc": "从对应品牌中筛选出长袖上衣",
                     "type": "longShirts",
                     "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 0,
+                    "scale": 1.0,
+                    "pos": [400, 400],
+                }
+            ],
+            "outputJpgFileName": "{0}_0", 
+        },
+        "a1": { 
+            "desc": "无背带长裤",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "无背带长裤",
+                    "type": "pants",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 1.0,
+                    "pos": [400, 400],
+                }
+            ],
+            "outputJpgFileName": "{0}_0", 
+        },
+        "a2": { 
+            "desc": "背带长裤",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "无背带长裤",
+                    "type": "bibPants",
+                    "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 1.0,
                     "pos": [400, 400],
@@ -262,6 +320,52 @@ WinterSetsConfig = {
                     "desc": "从对应品牌中筛选出长袖上衣",
                     "type": "longShirts",
                     "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 0,
+                    "scale": 1.0,
+                    "pos": [400, 400],
+                },
+                {
+                    "desc": "抓绒左上挂件",
+                    "type": "commonPng",
+                    "fileNamePattern": r'WinterLeftTop1\.png',
+                    "zOrder": 0,
+                    "scale": 0.732,
+                    "pos": [78, 110],
+                }
+            ],
+            "outputJpgFileName": "winter/{0}_0", 
+        },
+        "a1": { 
+            "desc": "无背带长裤",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "无背带长裤",
+                    "type": "pants",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 1.0,
+                    "pos": [400, 400],
+                },
+                {
+                    "desc": "抓绒左上挂件",
+                    "type": "commonPng",
+                    "fileNamePattern": r'WinterLeftTop1\.png',
+                    "zOrder": 0,
+                    "scale": 0.732,
+                    "pos": [78, 110],
+                }
+            ],
+            "outputJpgFileName": "winter/{0}_0", 
+        },
+        "a2": { 
+            "desc": "背带长裤",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "无背带长裤",
+                    "type": "bibPants",
+                    "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 1.0,
                     "pos": [400, 400],
