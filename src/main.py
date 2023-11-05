@@ -23,8 +23,8 @@ def concatenate_images(image1_path, image2_path, output_path, watermark_path, po
 
 
         # 提取指定范围的子图像
-        cropped_image1 = image1.crop(crop_box1)
-        cropped_image2 = image2.crop(crop_box2)
+        cropped_image1 = image1 and image1.crop(crop_box1)
+        cropped_image2 = image2 and image2.crop(crop_box2)
 
         # # 确保两个图像具有相同的尺寸
         # if image1.size != image2.size:
@@ -36,21 +36,24 @@ def concatenate_images(image1_path, image2_path, output_path, watermark_path, po
         new_image = Image.new("RGBA", (800, 800))
 
         # 将第一个图像粘贴到新图像的左侧
-        new_image.paste(cropped_image1, paste_position1)
+        if cropped_image1:
+            new_image.paste(cropped_image1, paste_position1)
 
         # 将第二个图像粘贴到新图像的右侧
-        new_image.paste(cropped_image2, paste_position2)
+        if cropped_image2:
+            new_image.paste(cropped_image2, paste_position2)
 
         # 调整水印图像的大小，使其与拼接后的图像大小相同
-        watermark = watermark.resize(new_image.size)
+        watermark = watermark and watermark.resize(new_image.size)
         watermark = utils.adjust_transparency(watermark, 1)
 
         # 将拼接后的图像覆盖在水印图像上
-        new_image_with_watermark = Image.alpha_composite(new_image, watermark.convert("RGBA"))
+        if watermark:
+            new_image_with_watermark = Image.alpha_composite(new_image, watermark.convert("RGBA"))
 
-        # 保存带有水印的拼接图像
-        new_image_with_watermark.save(output_path)
-        print("拼接成功！")
+            # 保存带有水印的拼接图像
+            new_image_with_watermark.save(output_path)
+            print("拼接成功！")
     except Exception as e:
         print(f"拼接失败：{e}")
 
@@ -67,18 +70,19 @@ position = (100, 100)  # 水印的位置，以拼接图像的左上角为参考�
 
 
 watermark = utils.getPngObjectFromJpgOrPngPath(".\\resource\\watermark.png")
-watermark = watermark.resize((800,800))
+watermark = watermark and watermark.resize((800,800))
 adjusted_watermark = utils.adjust_watermark_opacity(watermark, 0.1)
 for i in range(1,21):
     print(i)
     new_image = Image.new("RGBA", (800, 800))
     img1 = utils.getPngObjectFromJpgOrPngPath(".\\resource\\{}.jpg".format(i))
-    img1 = img1.resize((800, 800))
+    img1 = img1 and img1.resize((800, 800))
 
     # result = add_watermark(img1, adjusted_watermark, position, 0.1)
     # new_image.paste(img1, (0,0))
-    new_image = Image.alpha_composite(new_image, adjusted_watermark.convert("RGBA"))
-    new_image = utils.convert_transparent_pixels_to_white(new_image)
-    # new_image.save(".\\output\\{}.png".format(i))
-    new_image = new_image.convert("RGB")
-    new_image.save(".\\output\\{}.jpg".format(i), "JPEG", quality=95)
+    if adjusted_watermark:
+        new_image = Image.alpha_composite(new_image, adjusted_watermark.convert("RGBA"))
+        new_image = utils.convert_transparent_pixels_to_white(new_image)
+        # new_image.save(".\\output\\{}.png".format(i))
+        new_image = new_image.convert("RGB")
+        new_image.save(".\\output\\{}.jpg".format(i), "JPEG", quality=95)
