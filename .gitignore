@@ -8,3 +8,6 @@ resource/GoodsSinglePng/
 
 
 src/__pycache__/
+
+**/*.png
+**/*.jpg

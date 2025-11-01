@@ -145,6 +145,91 @@ SpringAutumnSetsConfig = {
             ],
             "outputJpgFileName": "{0}_0", 
         },
+        "a3": { 
+            "desc": "长袖上衣正反面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.78,
+                    "pos": [530, 300],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣正面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 1,
+                    "scale": 0.82,
+                    "pos": [270, 500],
+                }
+            ],
+            "outputJpgFileName": "长袖上衣正反面", 
+        },
+        "a4": { 
+            "desc": "长袖上衣正反面加无背带裤子背面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.78,
+                    "pos": [530, 300],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣正面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 1,
+                    "scale": 0.82,
+                    "pos": [270, 500],
+                },
+                {
+                    "desc": "从对应品牌中筛选出无背带长裤背面",
+                    "type": "pants", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.6,
+                    "pos": [639, 566],
+                }
+            ],
+            "outputJpgFileName": "长袖上衣正反面加无背带裤子背面", 
+        },
+        "a5": { 
+            "desc": "长袖上衣正反面加有背带裤子背面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.78,
+                    "pos": [530, 300],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣正面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 1,
+                    "scale": 0.82,
+                    "pos": [270, 500],
+                },
+                {
+                    "desc": "从对应品牌中筛选出背带长裤背面",
+                    "type": "bibPants", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.6,
+                    "pos": [631, 540],
+                }
+            ],
+            "outputJpgFileName": "长袖上衣正反面加有背带裤子背面", 
+        },
         "b": { 
             "desc": "长袖上衣和背面无背带长裤",
             "CompositeElements": [

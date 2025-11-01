@@ -10,9 +10,6 @@ class GenClothingJpgManager():
     def __init__(self):
         print("init")
 
-    
-
-
     def genOneBrandClothingSetJpg(self, brandName: str, genConfig: dict):
         """生成单个品牌单个产品指定生成配置生成产品图
         Args:
@@ -37,6 +34,8 @@ class GenClothingJpgManager():
                 # 要便利每个shirt下面的款式
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
                 # 便利sourcePath路径下的所有子文件，拿到子文件夹名
+                if not os.path.exists(outputPath):
+                    continue
                 for item in os.listdir(sourcePath):
                     stylePath = f"{sourcePath}/{item}"
                     if os.path.isdir(f"{sourcePath}/{item}"):
@@ -82,6 +81,7 @@ class GenClothingJpgManager():
         combinations = list(product(*genJpgObjList))
         for combination in combinations:
             print(combination)
+            combination_idx = combinations.index(combination)
             combination = list(combination)
             print([item.index for item in list(combination)])
             a = list(combination).sort(key=lambda x: x.zOrder)
@@ -91,7 +91,7 @@ class GenClothingJpgManager():
                 # 如果字符串中有f"{{{i}}}"，则将其替换成combination[i].index
                 if oupputFileName.find(f"{{{i}}}") != -1:
                     oupputFileName = oupputFileName.replace(f"{{{i}}}", f"{combination[i].index + 1}")
-            oupputFileName = f"{oupputFileName}_{jpgStyle}.jpg"
+            oupputFileName = f"{oupputFileName}_{jpgStyle}_{combination_idx + 1}.jpg"
             print(os.path.join(outputPath, oupputFileName))
 
             # utils.savePngObjectAsJpg(conbineJpgObj, os.path.join(outputPath, oupputFileName))
@@ -149,6 +149,8 @@ class GenClothingJpgManager():
         print(f"sourcePath:{sourcePath}")
         print(f"CompositeElementsItem:{CompositeElementsItem}")
         result = []
+        if not os.path.exists(sourcePath):
+            return result
         for item in os.listdir(sourcePath):
             if os.path.isfile(f"{sourcePath}/{item}"):
                 if re.match(CompositeElementsItem["fileNamePattern"], item):
@@ -173,11 +175,17 @@ def genJpgForBrand(brand):
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
-
-
 def main():
+    base_dir = "./resource/GoodsSinglePng"
+    if not os.path.isdir(base_dir):
+        print(f"{base_dir} 不存在，无法遍历品牌目录")
+        return
 
-    genJpgForBrand("etxeondo")
+    for brand in os.listdir(base_dir):
+        brand_path = os.path.join(base_dir, brand)
+        if os.path.isdir(brand_path):
+            print(f"开始生成品牌：{brand}")
+            genJpgForBrand(brand)
 
 
 main()
