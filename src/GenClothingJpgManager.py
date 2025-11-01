@@ -6,6 +6,8 @@ from PIL import Image
 import utils
 import config
 
+WATERMARK_PNG = "watermark2.png"
+
 class GenClothingJpgManager():
     def __init__(self):
         print("init")
@@ -104,7 +106,7 @@ class GenClothingJpgManager():
         utils.savePngObjectAsJpg(self.addWarterMark(jpgObj), os.path.join(os.path.dirname(path), "watermark", os.path.basename(path)))
 
 
-    def addWarterMark(self, pngObj, watermarkSourceName = "watermark1.png"):
+    def addWarterMark(self, pngObj, watermarkSourceName=WATERMARK_PNG):
         watermark = utils.getPngObjectFromJpgOrPngPath(os.path.join("./resource/commonPng", watermarkSourceName))
         if watermark is None:
             return pngObj
