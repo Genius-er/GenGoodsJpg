@@ -1,17 +1,17 @@
 @echo off
 chcp 65001
 
-set "pythonVersion=3.11"
+set "pythonVersion=3.12"
 
 REM 检查注册表中是否存在 Python 3.11 版本的安装路径
-for /f "tokens=2*" %%A in ('reg query "HKLM\Software\Python\PythonCore\3.11\InstallPath" /ve 2^>nul') do (
+for /f "tokens=2*" %%A in ('reg query "HKLM\Software\Python\PythonCore\3.12\InstallPath" /ve 2^>nul') do (
     set "pythonPath=%%B"
 )
-for /f "tokens=2*" %%A in ('reg query "HKCU\Software\Python\PythonCore\3.11\InstallPath" /ve 2^>nul') do (
+for /f "tokens=2*" %%A in ('reg query "HKCU\Software\Python\PythonCore\3.12\InstallPath" /ve 2^>nul') do (
     set "pythonPath=%%B"
 )
 
-set "downloadVersion=3.11.6"
+set "downloadVersion=3.12"
 if not defined pythonPath (
     echo Python %pythonVersion% 未在计算机上找到。
     rem 下载 Python 安装包
@@ -30,10 +30,10 @@ if not defined pythonPath (
 )
 
 rem 安装依赖
-py -3.11 -m pip install -r requirements.txt
+py -3.12 -m pip install -r requirements.txt
 
 
 rem 运行正式工具脚本
-py -3.11 .\src\GenClothingJpgManager.py
+py -3.12 .\src\GenClothingJpgManager.py
 
 pause
