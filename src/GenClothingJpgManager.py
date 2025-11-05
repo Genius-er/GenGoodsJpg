@@ -5,6 +5,7 @@ from itertools import product
 from PIL import Image
 import utils
 import config
+import sys
 
 class GenClothingJpgManager():
     def __init__(self):
@@ -175,17 +176,68 @@ def genJpgForBrand(brand):
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
-def main():
-    base_dir = "./resource/GoodsSinglePng"
+def _get_runtime_root():
+    """返回运行时根目录（保证打包后和源码运行时路径一致）"""
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)
+    # 当前文件位于 src 目录下，项目根目录为其上一级
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def _select_brands(base_dir: str):
+    """交互式选择品牌目录，返回选择的品牌列表"""
+    brands = [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
+    if not brands:
+        print("未在资源目录中发现任何品牌子目录。")
+        return []
+
+    print("可选品牌如下：")
+    for i, b in enumerate(brands, start=1):
+        print(f"[{i}] {b}")
+
+    while True:
+        choice = input("请输入要生成的品牌序号（支持多个，用逗号分隔；输入 all 选择全部）：").strip()
+        if choice.lower() in ("all", "*"):
+            return brands
+        # 支持逗号、空格分隔
+        tokens = [t for t in re.split(r"[\s,]+", choice) if t]
+        indices = []
+        valid = True
+        for t in tokens:
+            if not t.isdigit():
+                valid = False
+                break
+            idx = int(t)
+            if idx < 1 or idx > len(brands):
+                valid = False
+                break
+            indices.append(idx)
+        if valid and indices:
+            # 去重并保持升序
+            indices = sorted(set(indices))
+            return [brands[i - 1] for i in indices]
+        print("输入无效，请重新输入。")
+
+
+def interactive_main():
+    """交互式入口：选择品牌并生成对应图片"""
+    project_root = _get_runtime_root()
+    # 确保相对路径（./resource、./output）相对于项目根目录
+    os.chdir(project_root)
+
+    base_dir = os.path.join(project_root, "resource", "GoodsSinglePng")
     if not os.path.isdir(base_dir):
         print(f"{base_dir} 不存在，无法遍历品牌目录")
         return
 
-    for brand in os.listdir(base_dir):
-        brand_path = os.path.join(base_dir, brand)
-        if os.path.isdir(brand_path):
-            print(f"开始生成品牌：{brand}")
-            genJpgForBrand(brand)
+    selected_brands = _select_brands(base_dir)
+    if not selected_brands:
+        return
+
+    for brand in selected_brands:
+        print(f"开始生成品牌：{brand}")
+        genJpgForBrand(brand)
 
 
-main()
+if __name__ == "__main__":
+    interactive_main()
