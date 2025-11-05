@@ -61,7 +61,7 @@ class GenClothingJpgManager():
                                 genJpgObjList.append(self.getSubJpgObjList(os.path.join(projectSourcePath, "commonPng"), itemConfig))
                             else:
                                 genJpgObjList.append(self.getSubJpgObjList(os.path.join(os.path.dirname(os.path.dirname(styleSourcePath)), f'{itemConfig["type"]}'), itemConfig))
-                        self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle)
+                        self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, styleConfig.get("sameIndexGroups"))
             else:
                 genJpgObjList = [] # 双层list，list里面每一项要组合 
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
@@ -73,32 +73,44 @@ class GenClothingJpgManager():
                         genJpgObjList.append(self.getSubJpgObjList(os.path.join(projectSourcePath, "commonPng"), itemConfig))
                     else:
                         genJpgObjList.append(self.getSubJpgObjList(sourcePath, itemConfig))
-                self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle)
+                self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, styleConfig.get("sameIndexGroups"))
 
 
 
-    def combineJpgObjList(self, genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle):
+    def combineJpgObjList(self, genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, sameIndexGroups=None):
         # 进行组合
-        combinations = list(product(*genJpgObjList))
-        for combination in combinations:
+        filtered_combinations = []
+        for combo in product(*genJpgObjList):
+            is_valid = True
+            if sameIndexGroups:
+                for group in sameIndexGroups:
+                    keys = []
+                    for idx in group:
+                        obj = combo[idx]
+                        keys.append(getattr(obj, "matchKey", None))
+                    if None in keys or len(set(keys)) != 1:
+                        is_valid = False
+                        break
+            if is_valid:
+                filtered_combinations.append(list(combo))
+
+        for combination_idx, combination in enumerate(filtered_combinations, start=1):
             print(combination)
-            combination_idx = combinations.index(combination)
-            combination = list(combination)
             print([item.index for item in list(combination)])
-            a = list(combination).sort(key=lambda x: x.zOrder)
-            conbineJpgObj = self.combinePngObjects(sorted(combination, key=lambda x: x.zOrder))
+            combination.sort(key=lambda x: x.zOrder)
+            conbineJpgObj = self.combinePngObjects(combination)
             oupputFileName = oupputFileNameFormat
             for i in range(len(combination)):
                 # 如果字符串中有f"{{{i}}}"，则将其替换成combination[i].index
                 if oupputFileName.find(f"{{{i}}}") != -1:
                     oupputFileName = oupputFileName.replace(f"{{{i}}}", f"{combination[i].index + 1}")
-            oupputFileName = f"{oupputFileName}_{jpgStyle}_{combination_idx + 1}.jpg"
+            oupputFileName = f"{oupputFileName}_{jpgStyle}_{combination_idx}.jpg"
             print(os.path.join(outputPath, oupputFileName))
 
             # utils.savePngObjectAsJpg(conbineJpgObj, os.path.join(outputPath, oupputFileName))
             self.saveGoodsJpg(conbineJpgObj, os.path.join(outputPath, oupputFileName))
 
-        print(f"combinations:{combinations}")
+        print(f"combinations:{filtered_combinations}")
 
     def saveGoodsJpg(self, jpgObj, path):
         utils.savePngObjectAsJpg(jpgObj, path)
@@ -157,6 +169,11 @@ class GenClothingJpgManager():
                 if re.match(CompositeElementsItem["fileNamePattern"], item):
                     print(f"item:{item}")
                     CompositeElementsItem["index"] = len(result)
+                    m = re.match(r"(\d+)_", item)
+                    if m:
+                        CompositeElementsItem["matchKey"] = int(m.group(1))
+                    else:
+                        CompositeElementsItem.pop("matchKey", None)
                     result.append(self.getJpgObj(CompositeElementsItem, f"{sourcePath}/{item}"))
         return result
     

@@ -61,6 +61,7 @@ class PngDisplayObject():
         self.displayPng = None
         self.index = -1
         self.zOrder = 0
+        self.matchKey = None
 
         # 根据config修改值
         self.displayPng = utils.getPngObjectFromJpgOrPngPath(filePath)
@@ -88,6 +89,8 @@ class PngDisplayObject():
             self.scaleY = config["scale"]
         if "index" in config:
             self.index = config["index"]
+        if "matchKey" in config:
+            self.matchKey = config["matchKey"]
         if "width" in config:
             self.index = config["width"]
         if "height" in config:
