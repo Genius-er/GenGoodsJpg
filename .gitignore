@@ -11,3 +11,5 @@ src/__pycache__/
 
 **/*.png
 **/*.jpg
+*.psd
+resource/制作单品图参考线PSD/
