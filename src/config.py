@@ -166,6 +166,7 @@ SpringAutumnSetsConfig = {
                     "pos": [270, 500],
                 }
             ],
+            "sameIndexGroups": [[0, 1]],
             "outputJpgFileName": "长袖上衣正反面", 
         },
         "a4": { 
@@ -197,6 +198,7 @@ SpringAutumnSetsConfig = {
                     "pos": [639, 566],
                 }
             ],
+            "sameIndexGroups": [[0, 1]],
             "outputJpgFileName": "长袖上衣正反面加无背带裤子背面", 
         },
         "a5": { 
@@ -228,6 +230,7 @@ SpringAutumnSetsConfig = {
                     "pos": [631, 540],
                 }
             ],
+            "sameIndexGroups": [[0, 1]],
             "outputJpgFileName": "长袖上衣正反面加有背带裤子背面", 
         },
         "b": { 
