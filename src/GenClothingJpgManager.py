@@ -61,7 +61,14 @@ class GenClothingJpgManager():
                                 genJpgObjList.append(self.getSubJpgObjList(os.path.join(projectSourcePath, "commonPng"), itemConfig))
                             else:
                                 genJpgObjList.append(self.getSubJpgObjList(os.path.join(os.path.dirname(os.path.dirname(styleSourcePath)), f'{itemConfig["type"]}'), itemConfig))
-                        self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, styleConfig.get("sameIndexGroups"))
+                        self.combineJpgObjList(
+                            genJpgObjList,
+                            outputPath,
+                            oupputFileNameFormat,
+                            jpgStyle,
+                            sameIndexGroups=styleConfig.get("sameIndexGroups"),
+                            distinctIndexGroups=styleConfig.get("distinctIndexGroups")
+                        )
             else:
                 genJpgObjList = [] # 双层list，list里面每一项要组合 
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
@@ -73,11 +80,18 @@ class GenClothingJpgManager():
                         genJpgObjList.append(self.getSubJpgObjList(os.path.join(projectSourcePath, "commonPng"), itemConfig))
                     else:
                         genJpgObjList.append(self.getSubJpgObjList(sourcePath, itemConfig))
-                self.combineJpgObjList(genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, styleConfig.get("sameIndexGroups"))
+                self.combineJpgObjList(
+                    genJpgObjList,
+                    outputPath,
+                    oupputFileNameFormat,
+                    jpgStyle,
+                    sameIndexGroups=styleConfig.get("sameIndexGroups"),
+                    distinctIndexGroups=styleConfig.get("distinctIndexGroups")
+                )
 
 
 
-    def combineJpgObjList(self, genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, sameIndexGroups=None):
+    def combineJpgObjList(self, genJpgObjList, outputPath, oupputFileNameFormat, jpgStyle, sameIndexGroups=None, distinctIndexGroups=None):
         # 进行组合
         filtered_combinations = []
         for combo in product(*genJpgObjList):
@@ -89,6 +103,16 @@ class GenClothingJpgManager():
                         obj = combo[idx]
                         keys.append(getattr(obj, "matchKey", None))
                     if None in keys or len(set(keys)) != 1:
+                        is_valid = False
+                        break
+            if is_valid and distinctIndexGroups:
+                for group in distinctIndexGroups:
+                    keys = []
+                    for idx in group:
+                        obj = combo[idx]
+                        keys.append(getattr(obj, "matchKey", None))
+                    # 组内全部不同；出现 None 或有重复则判为无效组合
+                    if None in keys or len(set(keys)) != len(keys):
                         is_valid = False
                         break
             if is_valid:
