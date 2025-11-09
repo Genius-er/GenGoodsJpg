@@ -59,6 +59,7 @@ class PngDisplayObject():
         self._mainArea = [0, 0, 0, 0] # 图片中主体所在位置左上角右下角坐标，即制定的参考线PSD位置
         self._type = ""
         self.displayPng = None
+        self.filePath = filePath
         self.index = -1
         self.zOrder = 0
         self.matchKey = None
