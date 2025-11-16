@@ -272,7 +272,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 1,
                     "scale": 0.768,
                     "pos": [422, 314],
@@ -280,7 +280,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 2, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.768,
                     "pos": [225, 505],
@@ -304,7 +304,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 1,
                     "scale": 0.768,
                     "pos": [422, 314],
@@ -312,7 +312,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 2, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.768,
                     "pos": [225, 505],
@@ -335,7 +335,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
                     "scale": 0.733,
                     "pos": [216, 285],
@@ -343,7 +343,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 1,
                     "scale": 0.733,
                     "pos": [419, 388],
@@ -351,7 +351,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'3_0\.png',
                     "zOrder": 2,
                     "scale": 0.733,
                     "pos": [594, 539],
@@ -390,7 +390,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
                     "scale": 0.685,
                     "pos": [590, 263],
@@ -398,7 +398,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 1,
                     "scale": 0.685,
                     "pos": [476, 352],
@@ -406,7 +406,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'3_0\.png',
                     "zOrder": 2,
                     "scale": 0.685,
                     "pos": [359, 451],
@@ -414,7 +414,7 @@ SpringAutumnSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'4_0\.png',
                     "zOrder": 2,
                     "scale": 0.685,
                     "pos": [221, 549],
@@ -834,7 +834,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 1,
                     "scale": 0.768,
                     "pos": [422, 314],
@@ -842,7 +842,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 2, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.768,
                     "pos": [225, 505],
@@ -874,7 +874,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 1,
                     "scale": 0.768,
                     "pos": [422, 314],
@@ -882,7 +882,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 2, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.768,
                     "pos": [225, 505],
@@ -913,7 +913,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
                     "scale": 0.733,
                     "pos": [216, 285],
@@ -921,7 +921,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 1,
                     "scale": 0.733,
                     "pos": [419, 388],
@@ -929,7 +929,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'3_0\.png',
                     "zOrder": 2,
                     "scale": 0.733,
                     "pos": [594, 539],
@@ -976,7 +976,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
                     "scale": 0.685,
                     "pos": [590, 263],
@@ -984,7 +984,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'2_0\.png',
                     "zOrder": 1,
                     "scale": 0.685,
                     "pos": [476, 352],
@@ -992,7 +992,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'3_0\.png',
                     "zOrder": 2,
                     "scale": 0.685,
                     "pos": [359, 451],
@@ -1000,7 +1000,7 @@ WinterSetsConfig = {
                 {
                     "desc": "从对应品牌中筛选出长袖上衣正面",
                     "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
+                    "fileNamePattern": r'4_0\.png',
                     "zOrder": 2,
                     "scale": 0.685,
                     "pos": [221, 549],
