@@ -35,8 +35,6 @@ class GenClothingJpgManager():
                 # 要便利每个shirt下面的款式
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
                 # 便利sourcePath路径下的所有子文件，拿到子文件夹名
-                if not os.path.exists(outputPath):
-                    continue
                 for item in os.listdir(sourcePath):
                     stylePath = f"{sourcePath}/{item}"
                     if os.path.isdir(f"{sourcePath}/{item}"):
