@@ -35,6 +35,8 @@ class GenClothingJpgManager():
                 # 要便利每个shirt下面的款式
                 sourcePath = f'{basicSourcePath}/{styleConfig["CompositeElements"][0]["type"]}'
                 # 便利sourcePath路径下的所有子文件，拿到子文件夹名
+                if not os.path.exists(sourcePath):
+                    continue
                 for item in os.listdir(sourcePath):
                     stylePath = f"{sourcePath}/{item}"
                     if os.path.isdir(f"{sourcePath}/{item}"):
@@ -139,7 +141,7 @@ class GenClothingJpgManager():
         utils.savePngObjectAsJpg(self.addWarterMark(jpgObj), os.path.join(os.path.dirname(path), "watermark", os.path.basename(path)))
 
 
-    def addWarterMark(self, pngObj, watermarkSourceName = "watermark1.png"):
+    def addWarterMark(self, pngObj, watermarkSourceName = "watermark3.png"):
         watermark = utils.getPngObjectFromJpgOrPngPath(os.path.join("./resource/commonPng", watermarkSourceName))
         if watermark is None:
             return pngObj
@@ -176,9 +178,6 @@ class GenClothingJpgManager():
         new_png.paste(newImg2, pos)
         return Image.alpha_composite(baseImg, new_png)
 
-                        
-                        
-                            
 
     def getSubJpgObjList(self, sourcePath, CompositeElementsItem):
         print(f"sourcePath:{sourcePath}")
@@ -211,7 +210,7 @@ class GenClothingJpgManager():
 
 def genJpgForBrand(brand):
     genClothingJpgManager = GenClothingJpgManager()
-    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SummerSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SummerSetsConfig)
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
