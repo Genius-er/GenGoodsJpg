@@ -219,6 +219,20 @@ SummerSetsConfig = {
             ],
             "outputJpgFileName": "四件马甲无背面", 
         },
+        "v5": { 
+            "desc": "单件马甲正面",
+            "CompositeElements": [
+                {
+                    "desc": "正面马甲",
+                    "type": "vest",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 0,
+                    "scale": 1,
+                    "pos": [400, 400],
+                }
+            ],
+            "outputJpgFileName": "四件马甲无背面", 
+        },
         "s1": { 
             "desc": "两件短袖套装",
             "CompositeElements": [
