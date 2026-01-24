@@ -30,6 +30,8 @@ class GenClothingJpgManager():
 
 
         for jpgStyle, styleConfig in genConfig["configInfo"].items():
+            if jpgStyle != "d1":
+                continue
             oupputFileNameFormat = styleConfig["outputJpgFileName"]
             if  styleConfig["CompositeElements"][0]["type"] in ["shirts", "longShirts", "vest"]:
                 # 要便利每个shirt下面的款式
@@ -162,11 +164,9 @@ class GenClothingJpgManager():
             size = (combineImgItem.width, combineImgItem.height)
             # 有scale优先使用scale
             if combineImgItem.scaleX is not None and combineImgItem.scaleY is not None:
-                size = (int(combineImgItem.scaleX * combineImgItem.displayPng.width), int(combineImgItem.scaleY * combineImgItem.displayPng.height))
+                size = (int(combineImgItem.scaleX * combineImgItem.width), int(combineImgItem.scaleY * combineImgItem.height))
 
             pos = (int(combineImgItem.x - size[1]/2), int(combineImgItem.y - size[1]/2)) # xy的锚点是左下角，要映射成左上角的位置
-    
-            
 
             # 创建透明底图
             white_bg = self.combineImageObj(white_bg, combineImgItem.displayPng.resize(size), pos)
@@ -211,8 +211,8 @@ class GenClothingJpgManager():
 def genJpgForBrand(brand):
     genClothingJpgManager = GenClothingJpgManager()
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SummerSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
-    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
+    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
+    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
 def _get_runtime_root():
     """返回运行时根目录（保证打包后和源码运行时路径一致）"""
