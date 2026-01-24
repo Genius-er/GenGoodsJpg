@@ -30,8 +30,6 @@ class GenClothingJpgManager():
 
 
         for jpgStyle, styleConfig in genConfig["configInfo"].items():
-            if jpgStyle != "d1":
-                continue
             oupputFileNameFormat = styleConfig["outputJpgFileName"]
             if  styleConfig["CompositeElements"][0]["type"] in ["shirts", "longShirts", "vest"]:
                 # 要便利每个shirt下面的款式
@@ -211,8 +209,8 @@ class GenClothingJpgManager():
 def genJpgForBrand(brand):
     genClothingJpgManager = GenClothingJpgManager()
     genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SummerSetsConfig)
-    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
-    # genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.SpringAutumnSetsConfig)
+    genClothingJpgManager.genOneBrandClothingSetJpg(brand, config.WinterSetsConfig)
 
 def _get_runtime_root():
     """返回运行时根目录（保证打包后和源码运行时路径一致）"""
