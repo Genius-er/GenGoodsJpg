@@ -339,7 +339,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'1_1\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [557, 607],
                 },
                 {
@@ -347,7 +347,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'2_1\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [704, 607],
                 }
             ],
@@ -531,7 +531,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'1_1\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [557, 607],
                 },
                 {
@@ -539,7 +539,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'2_1\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [704, 607],
                 }
             ],
