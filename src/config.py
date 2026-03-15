@@ -339,7 +339,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'1_1\.png',
                     "zOrder": 0,
-                    "scale": 0.35,
+                    "scale": 0.56,
                     "pos": [557, 607],
                 },
                 {
@@ -347,7 +347,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'2_1\.png',
                     "zOrder": 0,
-                    "scale": 0.35,
+                    "scale": 0.56,
                     "pos": [704, 607],
                 }
             ],
@@ -431,7 +431,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.56,
                     "pos": [577, 592],
                 },
                 {
@@ -439,7 +439,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.56,
                     "pos": [722, 593],
                 }
             ],
@@ -477,7 +477,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [577, 592],
                 },
                 {
@@ -485,7 +485,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [722, 593],
                 }
             ],
@@ -585,7 +585,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [557, 607],
                 },
                 {
@@ -593,7 +593,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'2_0\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [704, 607],
                 }
             ],
@@ -639,7 +639,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [577, 592],
                 },
                 {
@@ -647,7 +647,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [722, 593],
                 }
             ],
@@ -693,7 +693,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [577, 592],
                 },
                 {
@@ -701,7 +701,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [722, 593],
                 }
             ],
@@ -817,7 +817,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'1_0\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [557, 607],
                 },
                 {
@@ -825,7 +825,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'2_0\.png',
                     "zOrder": 0,
-                    "scale": 0.135,
+                    "scale": 0.35,
                     "pos": [704, 607],
                 }
             ],
@@ -879,7 +879,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [577, 592],
                 },
                 {
@@ -887,7 +887,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_1\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [722, 593],
                 }
             ],
@@ -941,7 +941,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'3_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [577, 592],
                 },
                 {
@@ -949,7 +949,7 @@ SummerSetsConfig = {
                     "type": "bibShorts",
                     "fileNamePattern": r'4_0\.png',
                     "zOrder": 0,
-                    "scale": 0.138,
+                    "scale": 0.38,
                     "pos": [722, 593],
                 }
             ],
