@@ -52,7 +52,7 @@ class GenClothingJpgManager():
                                     if colorNum not in allColorNum:
                                         allColorNum.append(colorNum)
                         colorNumOfOneStyle = len(allColorNum) # 一款产品中的颜色数量
-                        outputPath = f'{basicOutputPath}/{styleNum}({colorNumOfOneStyle})'
+                        outputPath = f'{basicOutputPath}/{styleConfig["CompositeElements"][0]["type"]}/{styleNum}({colorNumOfOneStyle})'
 
                         for itemConfig in styleConfig["CompositeElements"]:
                             if itemConfig["type"] in ["shirts", "longShirts", "vest"]:
