@@ -59,8 +59,10 @@ class PngDisplayObject():
         self._mainArea = [0, 0, 0, 0] # 图片中主体所在位置左上角右下角坐标，即制定的参考线PSD位置
         self._type = ""
         self.displayPng = None
+        self.filePath = filePath
         self.index = -1
         self.zOrder = 0
+        self.matchKey = None
 
         # 根据config修改值
         self.displayPng = utils.getPngObjectFromJpgOrPngPath(filePath)
@@ -88,6 +90,8 @@ class PngDisplayObject():
             self.scaleY = config["scale"]
         if "index" in config:
             self.index = config["index"]
+        if "matchKey" in config:
+            self.matchKey = config["matchKey"]
         if "width" in config:
             self.index = config["width"]
         if "height" in config:
