@@ -27,7 +27,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.975,
-                    "pos": [275, 342],
+                    "pos": [280, 400],
                 },
                 {
                     "desc": "从对应品牌中筛选出短裤背面",
@@ -50,7 +50,7 @@ SummerSetsConfig = {
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 1, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.975,
-                    "pos": [275, 342],
+                    "pos": [280, 400],
                 },
                 {
                     "desc": "从对应品牌中筛选出短裤背面",
@@ -1152,8 +1152,8 @@ SpringAutumnSetsConfig = {
                     "desc": "从对应品牌中筛选出背带长裤背面",
                     "type": "bibPants", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
                     "fileNamePattern": r'(\d+)_1\.png',
-                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
-                    "scale": 1.02,
+                    "zOrder": 3, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.88,
                     "pos": [655, 375],
                 }
             ],
@@ -1184,7 +1184,7 @@ SpringAutumnSetsConfig = {
                     "desc": "从对应品牌中筛选出无背带长裤背面",
                     "type": "pants", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
                     "fileNamePattern": r'(\d+)_1\.png',
-                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "zOrder": 3, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
                     "scale": 0.88,
                     "pos": [667, 429],
                 }
