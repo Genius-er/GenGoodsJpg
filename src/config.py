@@ -11,11 +11,50 @@ SummerSetsConfig = {
                     "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
                     "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
-                    "scale": 1.0,
+                    "scale": 1.1,
                     "pos": [400,400], # 这个一定要整数
                 }
             ],
             "outputJpgFileName": "{0}_0", 
+        },
+        "a1": { 
+            "desc": "短袖上衣背面图，图片文件名为n_0.jpg，n为shirts的数量",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出短袖上衣",
+                    "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 1.1,
+                    "pos": [400,400], # 这个一定要整数
+                }
+            ],
+            "outputJpgFileName": "{0}_1", 
+        },
+        "a3": { 
+            "desc": "短袖上衣正反面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出短袖上衣",
+                    "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.88,
+                    "pos": [545,400], # 这个一定要整数
+                },
+                {
+                    "desc": "从对应品牌中筛选出短袖上衣",
+                    "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.88,
+                    "pos": [270,389], # 这个一定要整数
+                }
+            ],
+            "sameIndexGroups": [[0, 1]],
+            "outputJpgFileName": "{0}_1", 
         },
         "b": { 
             "desc": "短袖上衣后背面无背带短裤",
@@ -62,6 +101,70 @@ SummerSetsConfig = {
                 },
             ],
             "outputJpgFileName": "{0}_{1}", 
+        },
+        "b3": { 
+            "desc": "短袖上衣正反面加无背带裤子背面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "shirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.81,
+                    "pos": [515, 308],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣正面",
+                    "type": "shirts",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 1,
+                    "scale": 0.81,
+                    "pos": [249, 516],
+                },
+                {
+                    "desc": "从对应品牌中筛选出无背带长裤背面",
+                    "type": "shorts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.53,
+                    "pos": [658, 611],
+                }
+            ],
+            "sameIndexGroups": [[0, 1]],
+            "outputJpgFileName": "短袖上衣正反面加无背带裤子背面", 
+        },
+        "b4": { 
+            "desc": "短袖上衣正反面加无背带裤子背面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "shirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0,
+                    "scale": 0.81,
+                    "pos": [515, 308],
+                },
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣正面",
+                    "type": "shirts",
+                    "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 1,
+                    "scale": 0.81,
+                    "pos": [249, 516],
+                },
+                {
+                    "desc": "从对应品牌中筛选出有背带长裤背面",
+                    "type": "bibShorts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
+                    "fileNamePattern": r'(\d+)_1\.png',
+                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
+                    "scale": 0.78,
+                    "pos": [673, 520],
+                }
+            ],
+            "sameIndexGroups": [[0, 1]],
+            "outputJpgFileName": "短袖上衣正反面加无背带裤子背面", 
         },
         "c": { 
             "desc": "短袖上衣后背面背带短裤",
@@ -1095,38 +1198,6 @@ SpringAutumnSetsConfig = {
             ],
             "sameIndexGroups": [[0, 1]],
             "outputJpgFileName": "长袖上衣正反面加有背带裤子背面", 
-        },
-        "a6": { 
-            "desc": "长袖正反面加背带裤子背面",
-            "CompositeElements": [
-                # 合成部分
-                {
-                    "desc": "从对应品牌中筛选出长袖上衣背面",
-                    "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_1\.png',
-                    "zOrder": 0,
-                    "scale": 0.82,
-                    "pos": [457, 304],
-                },
-                {
-                    "desc": "从对应品牌中筛选出长袖上衣正面",
-                    "type": "longShirts",
-                    "fileNamePattern": r'(\d+)_0\.png',
-                    "zOrder": 1,
-                    "scale": 0.82,
-                    "pos": [246, 476],
-                },
-                {
-                    "desc": "从对应品牌中筛选出背带长裤背面",
-                    "type": "bibPants", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_1\.png',
-                    "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
-                    "scale": 0.67,
-                    "pos": [672, 546],
-                }
-            ],
-            "sameIndexGroups": [[0, 1]],
-            "outputJpgFileName": "长袖正反面加背带裤子背面", 
         },
         "a7": { 
             "desc": "两件长袖正面加背带裤背面",
