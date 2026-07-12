@@ -41,16 +41,16 @@ SummerSetsConfig = {
                     "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
                     "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
-                    "scale": 0.88,
-                    "pos": [545,400], # 这个一定要整数
+                    "scale": 0.8,
+                    "pos": [570,300], # 这个一定要整数
                 },
                 {
                     "desc": "从对应品牌中筛选出短袖上衣",
                     "type": "shirts", # 对应 SingleGoodsPngObj 中的一个类型或者shirts文件夹名，output中用用shirts的子文件夹名进行分文件夹
-                    "fileNamePattern": r'(\d+)_1\.png',
+                    "fileNamePattern": r'(\d+)_0\.png',
                     "zOrder": 0, # 合图时候的顺序，数字越小越在下面，反之则越在上面，默认是和key一样
-                    "scale": 0.88,
-                    "pos": [270,389], # 这个一定要整数
+                    "scale": 1,
+                    "pos": [280,440], # 这个一定要整数
                 }
             ],
             "sameIndexGroups": [[0, 1]],
@@ -1074,6 +1074,21 @@ SpringAutumnSetsConfig = {
                     "desc": "从对应品牌中筛选出长袖上衣",
                     "type": "longShirts",
                     "fileNamePattern": r'(\d+)_0\.png',
+                    "zOrder": 0,
+                    "scale": 1.0,
+                    "pos": [400, 400],
+                }
+            ],
+            "outputJpgFileName": "{0}_0", 
+        },
+        "a6": { 
+            "desc": "单长袖上衣背面",
+            "CompositeElements": [
+                # 合成部分
+                {
+                    "desc": "从对应品牌中筛选出长袖上衣背面",
+                    "type": "longShirts",
+                    "fileNamePattern": r'(\d+)_1\.png',
                     "zOrder": 0,
                     "scale": 1.0,
                     "pos": [400, 400],
